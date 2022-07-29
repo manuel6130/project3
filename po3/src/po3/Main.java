@@ -67,7 +67,7 @@ public class Main {
      */
     public void exit() {
         try {
-            GradebookWriter gbWriter = new GradebookWriter("gradebook.txt");
+            GradebookWriter gbWriter = new GradebookWriter("gradebook.dat");
             gbWriter.writeGradebook(getRoster());
             System.exit(0);
         } catch (FileNotFoundException exception) {
@@ -130,12 +130,10 @@ public class Main {
         JFrame.setDefaultLookAndFeelDecorated(true);
         setView(new View(this));
         try {
-            GradebookReader gradeBook = new GradebookReader("gradebook.txt");
+            GradebookReader gradeBook = new GradebookReader("gradebook.dat");
             setRoster(gradeBook.readGradebook());
-            mRoster = getRoster();
-
         } catch (FileNotFoundException e) {
-            getView().messageBox("Could not open gradebook.txt for reading. Exiting.");
+            getView().messageBox("Could not open gradebook.dat for reading. Exiting.");
             System.exit(-1);
         }
 

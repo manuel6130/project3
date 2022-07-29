@@ -53,7 +53,7 @@ public class GradebookReader {
      * from the input file.
      */
     private void readExam(Student pStudent) {
-        for (int n = 0; n < Main.getNumExams(); ++n) {
+        for (int n = 0; n < Main.getNumExams(); n++) {
             pStudent.addExam(mIn.nextInt());
         }
     }
