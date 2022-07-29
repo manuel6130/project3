@@ -139,26 +139,26 @@ public class View extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent pEvent) {
         String search = pEvent.getActionCommand();
-        if (search.equals(("Search"))) {
-            String lastName = mSearchButton.getText();
+        if (pEvent.getSource() == mSearchButton) {
+            String lastName = mStudentName.getText();
             if (lastName.equals("")) {
                 messageBox("Please enter the student's last name.");
             } else {
-                //mStudentName = getMain().search(lastName);
-                if (mStudentName == null) {
+                Student Student = getMain().search(lastName);
+                if (Student == null) {
                     messageBox("Student not found. Try again.");
                 } else {
                     displayStudent(Student.getCurrStudent());
                 }
             }
-        } else if (search.equals("Save")) {
-            if (mStudentName != null) {
+        } else if (pEvent.getSource() == mSaveButton) {
+            if (Student.getCurrStudent() != null) {
                 saveStudent(Student.getCurrStudent());
             }
-        } else if (search.equals("Clear")) {
+        } else if (pEvent.getSource() == mClearButton) {
             clear();
-        } else if (search.equals("Exit")) {
-            if (mStudentName != null) {
+        } else if (pEvent.getSource() == mExitButton) {
+            if (Student.getCurrStudent() != null) {
                 saveStudent(Student.getCurrStudent());
             }
             getMain().exit();
@@ -181,13 +181,7 @@ public class View extends JFrame implements ActionListener {
      */
     private void clear() {
         mStudentName.setText("");
-        mSearchButton.setText("");
-        for (int i = 0; i < Main.getNumHomeworks(); i++) {
-            mHomeworkText[i].setText("");
-        }
-        for (int i = 0; i < Main.getNumExams(); i++) {
-            mExamText[i].setText("");
-        }
+        clearNumbers();
         mStudentName = null;
     }
 
@@ -200,7 +194,12 @@ public class View extends JFrame implements ActionListener {
      * accessor methods in Main.
      */
     private void clearNumbers() {
-
+        for (int i = 0; i < Main.getNumHomeworks(); i++) {
+            mHomeworkText[i].setText("");
+        }
+        for (int i = 0; i < Main.getNumExams(); i++) {
+            mExamText[i].setText("");
+        }
     }
 
     /**
