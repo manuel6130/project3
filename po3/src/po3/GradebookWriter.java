@@ -1,12 +1,11 @@
 //**************************************************************************************************
-// CLASS: GradebookWriter
-//
-// AUTHOR
-// Kevin R. Burger (burgerk@asu.edu)
-// Computer Science & Engineering Program
-// Fulton Schools of Engineering
-// Arizona State University, Tempe, AZ 85287-8809
-// (c) Kevin R. Burger 2014-2019
+/*
+CLASS: GradebookWriter
+AUTHOR:
+Manuel Sanchez - msanc156 - msanc156@asu.edu
+Ilsa Ramirez - iramirez - iramirez@asu.edu
+Estevan Perez - eperez56 - eperez56@asu.edu
+ */
 //**************************************************************************************************
 package po3;
 

@@ -1,3 +1,12 @@
+//**************************************************************************************************
+/*
+CLASS: Sorter
+AUTHOR:
+Manuel Sanchez - msanc156 - msanc156@asu.edu
+Ilsa Ramirez - iramirez - iramirez@asu.edu
+Estevan Perez - eperez56 - eperez56@asu.edu
+ */
+//**************************************************************************************************
 package po3;
 
 import java.util.ArrayList;
